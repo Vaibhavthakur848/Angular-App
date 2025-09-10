@@ -1,4 +1,7 @@
 <div>Angular App</div>
 <div > {{myService.doubleCount()}}</div>
-
+<h2 appHighlight="lightgreen">Hover over this text to see highlight!</h2>
+<p appHighlight>Default yellow highlight on hover.</p>
+<p>{{ 'Angular' | reversestring }}</p>
+<p>{{[1,3,4,5,6,10,11,20,17] | sortArray}}</p>
 <router-outlet />
