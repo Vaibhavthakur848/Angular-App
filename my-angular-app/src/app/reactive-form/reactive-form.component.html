@@ -1,0 +1,31 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" type="text" formControlName="name">
+    <div *ngIf="userForm.get('name')?.invalid && (userForm.get('name')?.dirty || userForm.get('name')?.touched)" class="error-message">
+      <div *ngIf="userForm.get('name')?.errors?.['required']">Name is required.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email">
+    <div *ngIf="userForm.get('email')?.invalid && (userForm.get('email')?.dirty || userForm.get('email')?.touched)" class="error-message">
+      <div *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</div>
+      <div *ngIf="userForm.get('email')?.errors?.['email']">Invalid email format.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="message">Message:</label>
+    <textarea id="message" formControlName="message"></textarea>
+  </div>
+
+  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+</form>
+
+<!-- Optional: Display submitted data -->
+<div *ngIf="userForm.valid ">
+  <h3>Submitted Data:</h3>
+  <pre>{{ userForm.value | json }}</pre>
+</div>

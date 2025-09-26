@@ -9,10 +9,11 @@ import * as CounterActions from './common-state/common-action';
 import { HighlightDirective } from './custom-directives/highlight.directive';
 import { ReversestringPipe } from './custom-pipe/reversestring.pipe';
 import { SortArrayPipe } from './custom-pipe/sort-array.pipe';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HighlightDirective,ReversestringPipe,SortArrayPipe],
+  imports: [RouterOutlet, HighlightDirective,ReversestringPipe,SortArrayPipe,ReactiveFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
